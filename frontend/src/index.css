@@ -1,68 +1,76 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@100..800&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+html,
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  scrollbar-width: none;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+ol,
+ul,
+menu {
+  list-style: none;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@layer base {
+  h1 {
+    font-size: var(--text-2xl);
+    font-family: var(--font-PlaypenSansArabic);
+  }
+  h2 {
+    font-size: var(--text-xl);
+  }
+  h3 {
+    font-size: var(--text-lg);
+  }
+  a {
+    color: white;
+    text-decoration-line: none;
+    font-weight: var(--font-weight-semibold);
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@theme {
+  --font-PlaypenSansArabic: 'Playpen Sans Arabic', cursive;
+
+  --color-green-*: initial;
+  --color-green-300: #9abda5;
+  --color-green-400: #3c735c;
+  --color-green-500: #35633c;
+  --color-green-900: #021c0f;
+
+  --color-orange-100: #fdcdbc;
+  --color-orange-200: #fca88a;
+  --color-orange-500: #fc8458;
+  --color-orange-700: #fd7645;
+  --color-orange-900: #e94104;
+
+  --color-teal-100: #689aae;
+  --color-teal-200: #4f8094;
+  --color-teal-500: #3e6473;
+  --color-teal-700: #2c4751;
+  --color-teal-900: #1a2a30;
+
+  --blur-custom: 0.5px;
+}
+
+@layer components {
+  .nav-link {
+    @apply px-2 text-white hover:scale-110  transition-all duration-300 text-lg hover:ring-2 rounded-2xl hover:border-white;
   }
-  a:hover {
-    color: #747bff;
+  .categories-link {
+    @apply text-[12px] px-4 py-2 rounded-md border-1 border-white text-white font-semibold hover:bg-teal-700 hover:scale-110 transition-all duration-300;
   }
-  button {
-    background-color: #f9f9f9;
+  .carausel-img {
+    @apply w-full h-full object-cover blur-custom brightness-75;
   }
+}
+
+/* globals.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
