@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@100..800&display=swap');
 
 html,
 body {
@@ -15,7 +14,7 @@ menu {
 @layer base {
   h1 {
     font-size: var(--text-2xl);
-    font-family: var(--font-PlaypenSansArabic);
+    /* font-family: var(--font-PlaypenSansArabic); */
   }
   h2 {
     font-size: var(--text-xl);
