@@ -1,0 +1,13 @@
+name = "todoapp"
+main = "src/index.js"
+compatibility_date = "2024-03-18"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "development"
+
+[[kv_namespaces]]
+binding = "TODOS"
+id = "665737ef4f7c44b1a4900d13aa814cde"
+preview_id = "665737ef4f7c44b1a4900d13aa814cde"
+
